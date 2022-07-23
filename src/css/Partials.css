@@ -1,0 +1,29 @@
+/* 
+    header & footer 
+*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0ch;
+  padding: 1rem 0;
+  width: 100vw;
+  padding: 2rem;
+  background: linear-gradient(
+    to bottom,
+    rgb(201, 223, 219) 0%,
+    transparent 100%
+  );
+}
+.header p {
+  text-align: left;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgb(187, 221, 215);
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 1rem 0;
+  width: 100vw;
+  background-color: #fff;
+}

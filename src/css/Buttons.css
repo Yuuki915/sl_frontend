@@ -1,0 +1,82 @@
+/*  
+    btns 
+*/
+button {
+  border: none;
+  background-color: transparent;
+}
+.btn,
+.back-btn {
+  min-width: 6rem;
+  border: none;
+  border-radius: 50px;
+  background-color: #abc;
+  padding: 0.5rem;
+  font-size: 13px;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  margin: 0 0.5rem;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+  display: inline-block;
+}
+
+.logout-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.save-btn,
+.can-btn,
+.edit-btn,
+.del-btn,
+.back-btn,
+.addmore-btn {
+  transition: 0.3s;
+}
+.login-btn,
+.register-btn {
+  font-size: 15px;
+  padding: 1rem 0;
+}
+.addmore-btn {
+  padding: 0.5rem 1rem;
+}
+.save-btn:hover {
+  background-color: rgb(125, 185, 165);
+  opacity: 1;
+}
+.can-btn:hover {
+  background-color: rgb(249, 207, 156);
+  opacity: 1;
+}
+.edit-btn:hover {
+  background-color: rgb(125, 185, 165);
+  opacity: 1;
+}
+.del-btn:hover {
+  background-color: rgb(245, 132, 132);
+  opacity: 1;
+}
+.back-btn:hover {
+  background-color: rgb(249, 207, 156);
+  opacity: 1;
+}
+.addmore-btn:hover {
+  background-color: rgb(100, 131, 227);
+  opacity: 1;
+}
+.bb-posi {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+}
+.btns {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
