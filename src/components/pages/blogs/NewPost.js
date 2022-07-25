@@ -7,56 +7,56 @@ import Header from "../../partials/Header";
 
 export default function NewPost() {
   return (
-    <div class="new-page">
+    <div className="new-page">
       <Header />
-      <h1 class="page-h1">Write Your Blog</h1>
+      <h1 className="page-h1">Write Your Blog</h1>
 
       <form action="/blogs" method="POST" enctype="multipart/form-data">
-        <div class="input-container">
-          <label for="title" class="label">
+        <div className="input-container">
+          <label for="title" className="label">
             Title
           </label>
           <input type="text" name="title" required />
         </div>
 
-        <div class="input-container">
-          <label for="author" class="label">
+        <div className="input-container">
+          <label for="author" className="label">
             Author
           </label>
           <input type="text" name="author" required />
         </div>
 
-        <div class="input-container">
-          <label for="placeName" class="label">
+        <div className="input-container">
+          <label for="placeName" className="label">
             Name of the place
           </label>
           <input type="text" name="placeName" required />
         </div>
 
-        <div class="input-container">
-          <label for="country" class="label">
+        <div className="input-container">
+          <label for="country" className="label">
             Country
           </label>
           <input type="text" name="country" required />
         </div>
 
-        <div class="input-container">
-          <label for="body" class="label">
+        <div className="input-container">
+          <label for="body" className="label">
             Body
           </label>
           <textarea type="text" name="body"></textarea>
         </div>
 
-        <div class="input-container">
+        <div className="input-container">
           <label for="img">Upload Image</label>
           <input type="file" name="img" id="img" />
         </div>
 
-        <div class="input-container">
-          <a href="/blogs" class="btn can-btn">
+        <div className="input-container">
+          <a href="/blogs" className="btn can-btn">
             Cancel
           </a>
-          <button type="submit" class="btn save-btn">
+          <button type="submit" className="btn save-btn">
             Save
           </button>
         </div>
