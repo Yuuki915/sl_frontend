@@ -7,20 +7,20 @@ import Header from "../../partials/Header";
 
 export default function Edit() {
   return (
-    <div class="edit-page">
+    <div className="edit-page">
       <Header />
-      <h1 class="page-h1">Edit Blog</h1>
+      <h1 className="page-h1">Edit Blog</h1>
 
       <form action="/blogs/<%= blog.id %>?_method=PUT" method="POST">
-        <div class="input-container">
-          <label for="title" class="label">
+        <div className="input-container">
+          <label for="title" className="label">
             Title
           </label>
           <input type="text" name="title" value="<%= blog.title %>" required />
         </div>
 
-        <div class="input-container">
-          <label for="author" class="label">
+        <div className="input-container">
+          <label for="author" className="label">
             Author
           </label>
           <input
@@ -31,8 +31,8 @@ export default function Edit() {
           />
         </div>
 
-        <div class="input-container">
-          <label for="placeName" class="label">
+        <div className="input-container">
+          <label for="placeName" className="label">
             Name of the place
           </label>
           <input
@@ -43,8 +43,8 @@ export default function Edit() {
           />
         </div>
 
-        <div class="input-container">
-          <label for="country" class="label">
+        <div className="input-container">
+          <label for="country" className="label">
             Country
           </label>
           <input
@@ -55,8 +55,8 @@ export default function Edit() {
           />
         </div>
 
-        <div class="input-container">
-          <label for="body" class="label">
+        <div className="input-container">
+          <label for="body" className="label">
             Body
           </label>
           <textarea type="text" name="body">
@@ -64,11 +64,11 @@ export default function Edit() {
           </textarea>
         </div>
 
-        <div class="input-container">
-          <button class="btn can-btn">
+        <div className="input-container">
+          <button className="btn can-btn">
             <a href="/blogs">Cancel</a>
           </button>
-          <button type="submit" class="btn save-btn">
+          <button type="submit" className="btn save-btn">
             Edit
           </button>
         </div>

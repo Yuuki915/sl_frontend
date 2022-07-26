@@ -3,7 +3,7 @@ import "../../css/Partials.css";
 
 export default function Header() {
   return (
-    <div class="header">
+    <div className="header">
       <p>ShareLog</p>
     </div>
   );

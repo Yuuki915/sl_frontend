@@ -6,38 +6,38 @@ import "../../../css/Buttons.css";
 
 export default function Login() {
   return (
-    <div class="login">
+    <div className="login">
       <Header />
-      <div class="login-container">
+      <div className="login-container">
         <h1>Login</h1>
 
         <form action="/auth/login" method="post">
-          <div class="input-container">
-            <label for="username" class="label">
+          <div className="input-container">
+            <label for="username" className="label">
               Username
             </label>
             <input type="text" name="username" required />
           </div>
 
-          <div class="input-container">
-            <label for="password" class="label">
+          <div className="input-container">
+            <label for="password" className="label">
               Password
             </label>
             <input type="password" name="password" required />
           </div>
 
-          <div class="input-container">
-            <a href="/" class="btn can-btn">
+          <div className="input-container">
+            <a href="/" className="btn can-btn">
               Cancel
             </a>
-            <button type="submit" class="btn save-btn">
+            <button type="submit" className="btn save-btn">
               Login
             </button>
           </div>
 
           <div>
             Go to{" "}
-            <a href="/register" class="reg-link">
+            <a href="/register" className="reg-link">
               Register
             </a>
           </div>

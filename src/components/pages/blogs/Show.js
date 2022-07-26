@@ -7,51 +7,51 @@ import Header from "../../partials/Header";
 
 export default function Show() {
   return (
-    <div class="show">
+    <div className="show">
       <Header />
-      <div class="bb-posi">
+      <div className="bb-posi">
         <button>
-          <a href="/blogs" class="back-btn">
+          <a href="/blogs" className="back-btn">
             Back
           </a>
         </button>
         <button>
-          <a href="/blogs/new" class="btn addmore-btn">
+          <a href="/blogs/new" className="btn addmore-btn">
             Add more
           </a>
         </button>
       </div>
 
-      <div class="blog-detail">
-        {/* <h1 class="show-title"><%= blog.title %></h1> */}
-        {/* <h6 class="show-time"><%= blog.timeCreated.toLocaleDateString() %></h6> */}
-        <div class="author-info">
-          {/* <p class="show-auth">@<%= blog.author %></p> */}
+      <div className="blog-detail">
+        {/* <h1 className="show-title"><%= blog.title %></h1> */}
+        {/* <h6 className="show-time"><%= blog.timeCreated.toLocaleDateString() %></h6> */}
+        <div className="author-info">
+          {/* <p className="show-auth">@<%= blog.author %></p> */}
         </div>
 
-        <div class="show-img">
+        <div className="show-img">
           <img src="/uploads/imgs/<%= blog.img %>" alt="show-img" />
         </div>
 
-        <div class="show-texts">
-          <div class="show-place">
+        <div className="show-texts">
+          <div className="show-place">
             <p>My favorite place is ...</p>
             {/* <p><%- blog.placeName %></p> */}
           </div>
-          <div class="show-country">
+          <div className="show-country">
             <p>In</p>
             {/* <p><%- blog.country %></p> */}
           </div>
-          {/* <p class="show-body"><%- blog.body %></p> */}
+          {/* <p className="show-body"><%- blog.body %></p> */}
         </div>
       </div>
 
-      <div class="btns">
+      <div className="btns">
         <form action="/blogs/<%= blog.id %>?_method=DELETE" method="POST">
-          <button class="btn del-btn">Delete</button>
+          <button className="btn del-btn">Delete</button>
         </form>
 
-        <a href="edit/<%= blog.id %>" class="btn edit-btn">
+        <a href="edit/<%= blog.id %>" className="btn edit-btn">
           Edit
         </a>
       </div>
