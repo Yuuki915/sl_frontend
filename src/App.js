@@ -1,6 +1,8 @@
 import "./css/App.css";
 import "./css/Buttons.css";
+import { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { useBlogsContext } from "./hooks/useBlogsContext";
 
 import Login from "./components/pages/auth/Login";
 import Register from "./components/pages/auth/Register";
@@ -9,8 +11,6 @@ import Main from "./components/pages/Main";
 import NewPost from "./components/pages/blogs/NewPost";
 import Edit from "./components/pages/blogs/Edit";
 import Show from "./components/pages/blogs/Show";
-import { useBlogsContext } from "./hooks/useBlogsContext";
-import { useEffect } from "react";
 
 function App() {
   const { blogs, dispatch } = useBlogsContext();
@@ -32,14 +32,13 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          <Route path="/user/login" element={<Login />} />
+          <Route path="/user/register" element={<Register />} />
 
-          <Route path="/blogs" element={<Main blogs={blogs} />}>
-            <Route path="/blogs/new" element={<NewPost />} />
-            <Route path="/blogs/:slug" element={<Show />} />
-            <Route path="/blogs/edit/:slug" element={<Edit />} />
-          </Route>
+          <Route path="/blogs" element={<Main blogs={blogs} />} />
+          <Route path="/blogs/new" element={<NewPost />} />
+          <Route path="/blogs/:slug" element={<Show />} />
+          <Route path="/blogs/edit/:slug" element={<Edit />} />
         </Routes>
       </Router>
     </div>
