@@ -3,6 +3,7 @@ import Footer from "../../partials/Footer";
 import Header from "../../partials/Header";
 import "../../../css/App.css";
 import "../../../css/Buttons.css";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   return (
@@ -11,16 +12,16 @@ export default function Login() {
       <div className="login-container">
         <h1>Login</h1>
 
-        <form action="/auth/login" method="post">
+        <form action="/user/login" method="post">
           <div className="input-container">
-            <label for="username" className="label">
-              Username
+            <label htmlFor="email" className="label">
+              Email
             </label>
-            <input type="text" name="username" required />
+            <input type="text" name="email" required />
           </div>
 
           <div className="input-container">
-            <label for="password" className="label">
+            <label htmlFor="password" className="label">
               Password
             </label>
             <input type="password" name="password" required />
@@ -37,9 +38,9 @@ export default function Login() {
 
           <div>
             Go to{" "}
-            <a href="/register" className="reg-link">
+            <Link to="/user/register" className="reg-link">
               Register
-            </a>
+            </Link>
           </div>
         </form>
       </div>

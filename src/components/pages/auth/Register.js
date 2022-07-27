@@ -3,6 +3,7 @@ import Footer from "../../partials/Footer";
 import Header from "../../partials/Header";
 import "../../../css/App.css";
 import "../../../css/Buttons.css";
+import { Link } from "react-router-dom";
 
 export default function Register() {
   return (
@@ -11,16 +12,16 @@ export default function Register() {
       <div className="resister-container">
         <h1>Register</h1>
 
-        <form action="/auth/register" method="post">
+        <form action="/user/register" method="post">
           <div className="input-container">
-            <label for="username" className="label">
-              Username
+            <label htmlFor="email" className="label">
+              Email
             </label>
-            <input type="text" name="username" required />
+            <input type="text" name="email" required />
           </div>
 
           <div className="input-container">
-            <label for="password" className="label">
+            <label htmlFor="password" className="label">
               Password
             </label>
             <input type="password" name="password" required />
@@ -37,9 +38,9 @@ export default function Register() {
 
           <div>
             Go to{" "}
-            <a href="/login" className="login-link">
+            <Link to="/user/login" className="login-link">
               Login
-            </a>
+            </Link>
           </div>
         </form>
       </div>
