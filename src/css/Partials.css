@@ -8,16 +8,20 @@
   padding: 1rem 0;
   width: 100vw;
   padding: 2rem;
-  background: linear-gradient(
-    to bottom,
-    rgb(201, 223, 219) 0%,
-    transparent 100%
-  );
 }
 .header p {
   text-align: left;
   color: #fff;
   text-shadow: 1px 1px 3px rgb(187, 221, 215);
+}
+.show .header,
+.edit .header,
+.new .header {
+  background: linear-gradient(
+    to bottom,
+    rgb(201, 223, 219) 0%,
+    transparent 100%
+  );
 }
 .footer {
   position: fixed;

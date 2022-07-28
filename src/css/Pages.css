@@ -196,8 +196,8 @@
   padding-bottom: 1rem;
 }
 
-.new-page,
-.edit-page {
+.new,
+.edit {
   width: 70%;
   margin: 5rem auto;
 }
