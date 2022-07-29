@@ -8,6 +8,8 @@
   padding: 1rem 0;
   width: 100vw;
   padding: 2rem;
+  display: flex;
+  justify-content: space-between;
 }
 .header p {
   text-align: left;
@@ -20,9 +22,14 @@
   background: linear-gradient(
     to bottom,
     rgb(201, 223, 219) 0%,
+    rgb(201, 223, 219) 50%,
     transparent 100%
   );
 }
+.auth-link {
+  margin: 0 0.5rem;
+}
+
 .footer {
   position: fixed;
   bottom: 0;
