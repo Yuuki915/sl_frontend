@@ -24,9 +24,7 @@ export default function Main({ blogs }) {
       {blogs && blogs.length < 1 ? (
         <p className="nopost">No post yet.</p>
       ) : (
-        <div className="blogs">
-          <Blogs blogs={blogs} />
-        </div>
+        <Blogs blogs={blogs} />
       )}
       <Footer />
     </div>
