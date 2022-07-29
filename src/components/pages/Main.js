@@ -8,8 +8,6 @@ import Footer from "../partials/Footer";
 import Blogs from "./blogs/Blogs";
 
 export default function Main({ blogs }) {
-  console.log(blogs);
-
   return (
     <div className="main">
       <div className="siteimg"></div>
