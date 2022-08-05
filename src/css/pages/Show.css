@@ -27,13 +27,13 @@
   justify-content: right;
   background-color: aquamarine;
   padding: 10px;
+  width: 110%;
 }
 .cat-options {
   margin: 5rem 0;
 }
 .cat-options a {
   display: block;
-  margin: 1rem 0;
   color: #333;
   cursor: pointer;
 }

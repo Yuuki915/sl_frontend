@@ -2,10 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../../css/App.css";
 import "../../css/Buttons.css";
-import "../../css/Pages.css";
 import "../../css/pages/Main.css";
-import Categories from "../partials/Categories";
 
+import Categories from "../partials/Categories";
 import Footer from "../partials/Footer";
 import Blogs from "./blogs/Blogs";
 

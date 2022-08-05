@@ -7,7 +7,6 @@ import Footer from "../../partials/Footer";
 
 import "../../../css/App.css";
 import "../../../css/Buttons.css";
-import "../../../css/Pages.css";
 import "../../../css/pages/Show.css";
 
 export default function Show() {

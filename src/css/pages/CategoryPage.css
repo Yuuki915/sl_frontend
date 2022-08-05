@@ -4,7 +4,23 @@
   grid-template-rows: 100%;
 }
 
+.category-page .blogs-wrapper {
+  padding: 3rem 0;
+}
 .blog-cards {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   padding: 2rem 0;
+}
+.cat-options h4 {
+  padding: 5px 0;
+}
+.categories .cat {
+  transition: 0.3s;
+  padding: 7px 0;
+}
+.categories .cat:hover {
+  color: #fff;
+  background-color: darksalmon;
 }
