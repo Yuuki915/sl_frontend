@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import "../../css/App.css";
 import "../../css/Buttons.css";
 import "../../css/Pages.css";
+import "../../css/pages/Main.css";
+import Categories from "../partials/Categories";
 
 import Footer from "../partials/Footer";
 import Blogs from "./blogs/Blogs";
@@ -15,12 +17,15 @@ export default function Main({ blogs }) {
       <Link to="/auth/logout" className="btn logout-btn">
         Logout
       </Link>
-      <p className="subtitle">Share the place you like</p>
+      <p className="subtitle">Share your favorite</p>
       <div className="btn-container">
-        <button className="btn add-btn">
-          <Link to="/blogs/new">Add Place</Link>
+        <button className="add-btn">
+          <Link to="/blogs/new">Add Blog</Link>
         </button>
       </div>
+
+      <Categories />
+
       {blogs && blogs.length < 1 ? (
         <p className="nopost">No post yet.</p>
       ) : (

@@ -81,8 +81,7 @@ label {
 /* 
     layout 
 */
-.blogs-container,
-.show {
+.blogs-container {
   width: 80%;
   margin: 7rem auto;
 }

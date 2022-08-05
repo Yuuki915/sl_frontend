@@ -1,0 +1,10 @@
+.category-page {
+  display: grid;
+  grid-template-columns: 200px auto;
+  grid-template-rows: 100%;
+}
+
+.blog-cards {
+  display: flex;
+  padding: 2rem 0;
+}

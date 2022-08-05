@@ -7,7 +7,7 @@ export default function Card({ blog }) {
     <div className="card">
       <Link key={blog._id} to={`/blogs/${blog.slug}`} className="read-btn">
         <div className="box-img">
-          {/* <img src={`/uploads/imgs/${blog.img} `} alt="" /> */}
+          <img src={`${blog && blog.img}`} alt="img" />
         </div>
         <div className="blog-container">
           <div className="blog">

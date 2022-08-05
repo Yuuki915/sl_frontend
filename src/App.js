@@ -11,6 +11,7 @@ import Main from "./components/pages/Main";
 import NewPost from "./components/pages/blogs/NewPost";
 import Edit from "./components/pages/blogs/Edit";
 import Show from "./components/pages/blogs/Show";
+import CategoryPage from "./components/pages/blogs/CategoryPage";
 
 function App() {
   const { blogs, dispatch } = useBlogsContext();
@@ -36,6 +37,7 @@ function App() {
           <Route path="/user/register" element={<Register />} />
 
           <Route path="/blogs" element={<Main blogs={blogs} />} />
+          <Route path="/blogs/category/:category" element={<CategoryPage />}/>
           <Route path="/blogs/new" element={<NewPost />} />
           <Route path="/blogs/:slug" element={<Show />} />
           <Route path="/blogs/edit/:id" element={<Edit />} />

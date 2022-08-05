@@ -71,9 +71,12 @@ a {
   opacity: 1;
 }
 .bb-posi {
-  width: 80%;
-  margin: 0 auto;
-  display: flex;
+  /* width: 80%; */
+  /* margin: 0 auto; */
+  /* display: flex; */
+  position: fixed;
+  top: 50px;
+  right: 10px;
 }
 .btns {
   display: flex;

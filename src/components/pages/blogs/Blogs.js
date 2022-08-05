@@ -1,10 +1,13 @@
 import React from "react";
-import Card from "./card/Card";
+import Card from "../../partials/card/Card";
 
 export default function Blogs({ blogs }) {
   return (
-    <div className="blogs">
-      {blogs && blogs.map((blog) => <Card key={blog._id} blog={blog} />)}
+    <div className="blogs-wrapper">
+      <p className="all-blogs">All Blogs</p>
+      <div className="blogs">
+        {blogs && blogs.map((blog) => <Card key={blog._id} blog={blog} />)}
+      </div>
     </div>
   );
 }

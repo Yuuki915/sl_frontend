@@ -1,6 +1,29 @@
 /* 
     top index / imgs 
 */
+.main .categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 3rem 0;
+}
+.main .categories .cat {
+  color: #fff;
+  background-color: cadetblue;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50% 50%;
+  margin: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.main .categories .cat:hover {
+  background-color: rgba(95, 158, 160, 0.6);
+}
+
 .siteimg {
   width: 100vw;
 
@@ -33,8 +56,8 @@
 }
 
 /*  
-      top index / add btn  
-  */
+        top index / add btn  
+    */
 .add-btn {
   width: 100%;
   background-color: #fff;
@@ -97,12 +120,19 @@
 }
 
 /*
-    top index / blogs 
-*/
+      top index / blogs 
+  */
 .nopost {
   margin: 3rem 0;
 }
-
+.blogs-wrapper {
+  margin: 5rem 0;
+  padding: 2rem 0;
+  background-color: #eee;
+}
+.all-blogs {
+  font-size: 2rem;
+}
 .blogs {
   max-width: 80%;
   max-height: auto;
@@ -185,73 +215,4 @@
   color: #333;
   margin: 1rem;
   position: relative;
-}
-
-/*
-      new / edit blog
-  */
-.page-h1 {
-  width: 50%;
-  margin: 2rem auto;
-  padding-bottom: 1rem;
-}
-
-.new,
-.edit {
-  width: 70%;
-  margin: 5rem auto;
-}
-
-/* 
-      show 
-  */
-.show-img {
-  margin: 2rem 0;
-  text-align: center;
-}
-.show-img img {
-  width: 80%;
-  object-fit: cover;
-}
-.show-texts {
-  margin: 0 2rem;
-}
-.blog-detail {
-  width: 70%;
-  margin: 5rem auto;
-  text-align: left;
-}
-.show-title {
-  text-align: left;
-}
-.show-time {
-  text-align: right;
-}
-.author-info {
-  display: flex;
-  align-items: center;
-}
-.show-auth {
-  text-align: left;
-  padding-left: 1rem;
-}
-.show-place,
-.show-country,
-.show-body {
-  margin: 2rem 0;
-}
-
-/*  
-      add  edit  del  
-  */
-.input-container {
-  width: 80%;
-  margin: 1rem auto;
-}
-.input-container input,
-.input-container textarea {
-  width: 100%;
-}
-.label {
-  display: block;
 }
