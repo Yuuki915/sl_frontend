@@ -4,6 +4,28 @@
   grid-template-rows: 100%;
 }
 
+.to-top-link {
+  position: absolute;
+  top: 1.5rem;
+  left: 230px;
+  color: #333;
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s all;
+}
+.to-top-icon {
+  font-size: 20px;
+  color: #333;
+  display: inline-block;
+  margin: 0.5rem;
+}
+.to-top-link:hover {
+  color: #fff;
+  text-shadow: 0px 0px 1px #333;
+}
+
 .category-page .blogs-wrapper {
   padding: 3rem 0;
 }
@@ -11,7 +33,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 2rem 0;
+  padding: 3rem 0;
 }
 .cat-options h4 {
   padding: 5px 0;
@@ -22,5 +44,11 @@
 }
 .categories .cat:hover {
   color: #fff;
-  background-color: darksalmon;
+  background-color: rgba(95, 158, 160, 0.6);
+}
+
+@media (max-width: 890px) {
+  .category-page {
+    display: block;
+  }
 }
