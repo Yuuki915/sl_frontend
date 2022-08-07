@@ -1,3 +1,6 @@
+import "../../../css/App.css";
+import "../../../css/Buttons.css";
+import "../../../css/pages/NewEdit.css";
 import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useBlogsContext } from "../../../hooks/useBlogsContext";
@@ -6,10 +9,6 @@ import axios from "axios";
 import Form from "../../partials/Form";
 import Header from "../../partials/Header";
 import Footer from "../../partials/Footer";
-
-import "../../../css/App.css";
-import "../../../css/Buttons.css";
-import "../../../css/pages/NewEdit.css";
 
 export default function Edit() {
   const { blogs, dispatch } = useBlogsContext();

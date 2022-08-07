@@ -3,8 +3,6 @@ import React, { createContext, useReducer } from "react";
 export const BlogsContext = createContext();
 
 export const blogsReducer = (state, action) => {
-  // console.log("State: ", state);
-  // console.log("Action: ", action);
 
   switch (action.type) {
     case "SET_BLOGS":

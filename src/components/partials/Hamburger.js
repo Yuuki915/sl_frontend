@@ -44,7 +44,7 @@ export default function Hamburger() {
     <div className="hamburger-wrapper">
       <div className="user-lines">
         {user && user ? (
-          <div>
+          <div className="user-loggedin">
             <div className="user-icon-name" onClick={showLogout}>
               <BiUserCircle className="user-icon" />
               <p>{user && user.username}</p>

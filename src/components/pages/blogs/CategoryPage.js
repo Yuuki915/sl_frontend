@@ -3,6 +3,7 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { useBlogsContext } from "../../../hooks/useBlogsContext";
 import { useAuthContext } from "../../../hooks/useAuthContext";
+import { FiArrowLeftCircle } from "react-icons/fi";
 
 import Card from "../../partials/card/Card";
 import Categories from "../../partials/Categories";
@@ -39,15 +40,16 @@ export default function CategoryPage() {
 
         <div className="blog-wrapper">
           <div className="bb-posi">
-            <button>
-              <Link to="/blogs" className="back-btn">
-                Top page
+            <button className="back-btn">
+              <Link to="/blogs" className="back-link">
+                <FiArrowLeftCircle />
+                <span>Top page</span>
               </Link>
             </button>
             {user ? (
-              <button>
-                <Link to="/blogs/new" className="btn addmore-btn">
-                  Add Blog
+              <button className="addmore-btn">
+                <Link to="/blogs/new" className="addmore-link">
+                  <span>Add Blog</span>
                 </Link>
               </button>
             ) : (

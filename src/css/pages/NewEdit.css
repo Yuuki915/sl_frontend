@@ -10,7 +10,7 @@
 .new,
 .edit {
   width: 70%;
-  margin: 5rem auto;
+  margin: 10rem auto;
 }
 
 .category-select {
@@ -23,6 +23,9 @@
 .input-container {
   width: 80%;
   margin: 1rem auto;
+}
+.input-container-btns {
+  margin-top: 5rem;
 }
 .input-container input,
 .input-container textarea {
