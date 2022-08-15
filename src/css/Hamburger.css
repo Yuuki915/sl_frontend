@@ -44,7 +44,7 @@
 }
 .user-lines {
   position: fixed;
-  top: 1.5rem;
+  top: 2rem;
   right: 1.5rem;
   display: flex;
   align-items: center;
@@ -70,7 +70,7 @@
   position: absolute;
   top: 2.5rem;
   left: 1rem;
-  width: 80%;
+  width: 100px;
   padding: 0.7rem 1rem;
   color: #fff;
   background-color: #ccc;

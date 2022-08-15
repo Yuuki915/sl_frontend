@@ -36,8 +36,13 @@
   grid-template-columns: 200px auto;
   grid-template-rows: 100%;
 }
-.sidebar {
+.sidebar-container {
+  height: 100vh;
   background-color: #ccc;
+}
+.sidebar {
+  position: sticky;
+  top: 0;
   padding: 7rem 0;
 }
 .to-top {
@@ -48,8 +53,12 @@
   left: 1.5rem;
 }
 .categories-wrapper {
-  position: sticky;
-  top: 10rem;
+  background-color: #ccc;
+  width: 200px;
+  height: 100%;
+  position: fixed;
+  top: 13rem;
+  left: 0;
 }
 .show-current-category {
   display: flex;
@@ -70,7 +79,7 @@
   cursor: pointer;
 }
 .blog-wrapper {
-  padding: 1.5rem 5rem 7rem;
+  padding: 1.5rem 3rem 5rem;
 }
 .show-img {
   margin: 2rem;

@@ -1,4 +1,5 @@
 // import axios from "axios";
+import axios from "axios";
 import { useState } from "react";
 import { useAuthContext } from "./useAuthContext";
 
@@ -11,36 +12,39 @@ export const useRegister = () => {
     setIsLoading(true);
     setError(null);
 
-    // const data = { username, email, password };
-    const res = await fetch("/user/register", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username, email, password }),
-    });
+    const data = { username, email, password };
+    await axios
+      .post(`/user/register`, data)
+      .then((res) => {
+        console.log(res.data);
+        localStorage.setItem("user", JSON.stringify(data));
+        dispatch({ type: "LOGIN", payload: res.data });
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        setError(err);
+        console.log(err);
+      });
 
-    // axios
-    //   .post(`/blogs/new`, data)
-    //   .then((res) => {
-    //     console.log(res);
-    //     return res;
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
+    // const res = await fetch("/user/register", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify({ username, email, password }),
+    // });
 
-    const json = await res.json();
+    // const json = await res.json();
 
-    if (!res.ok) {
-      setIsLoading(false);
-      setError(json.error);
-    }
-    if (res.ok) {
-      // save user
-      localStorage.setItem("user", JSON.stringify(json));
-      dispatch({ type: "LOGIN", payload: json });
+    // if (!res.ok) {
+    //   setIsLoading(false);
+    //   setError(json.error);
+    // }
+    // if (res.ok) {
+    //   // save user
+    //   localStorage.setItem("user", JSON.stringify(json));
+    //   dispatch({ type: "LOGIN", payload: json });
 
-      setIsLoading(false);
-    }
+    //   setIsLoading(false);
+    // }
   };
 
   return { register, isLoading, error };

@@ -1,16 +1,21 @@
-import axios from "axios";
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import "../../../css/App.css";
 import "../../../css/Buttons.css";
 import "../../../css/pages/NewEdit.css";
+
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useAuthContext } from "../../../hooks/useAuthContext";
 import { useBlogsContext } from "../../../hooks/useBlogsContext";
+
 import Footer from "../../partials/Footer";
 import Form from "../../partials/Form";
 import Header from "../../partials/Header";
 
 export default function NewPost() {
   const { dispatch } = useBlogsContext();
+  const { user } = useAuthContext();
+
   const navigate = useNavigate();
 
   const [title, setTitle] = useState("");
@@ -44,9 +49,13 @@ export default function NewPost() {
   const submitHandler = async (e) => {
     e.preventDefault();
 
+    if (!user) {
+      setError("Please login.");
+    }
+
     const data = {
       title: title,
-      author: author,
+      author: user.username,
       body: body,
       img: img,
       placeName: placeName,
@@ -54,35 +63,26 @@ export default function NewPost() {
       category: category,
     };
 
-    const res = await axios
-      .post(`/blogs/new`, data)
+    // const res = await fetch("/blogs/new", {
+    //   method: "POST",
+    //   body: JSON.stringify(blog),
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     Authorization: `Bearer ${user.token}`,
+    //   },
+    // });
+
+    await axios
+      .post("/blogs/new", data)
       .then((res) => {
-        console.log(res);
-        return res;
+        console.log(res.data);
+        dispatch({ type: "CREATE_BLOG", payload: res.data });
+        navigate(`/blogs/${res.data.slug}`);
       })
       .catch((err) => {
+        setError(err);
         console.log(err);
       });
-
-    const json = await res.json();
-
-    if (!res.ok) {
-      setError(json.error);
-      console.log(error);
-    }
-    if (res.ok) {
-      setTitle("");
-      setAuthor("");
-      setBody("");
-      // setImg("");
-      setPlaceName("");
-      setCountry("");
-      // setCategory("");
-      setError(null);
-      console.log("new blog added!", json);
-      dispatch({ type: "CREATE_BLOG", payload: json });
-      navigate(`/blogs/${json.slug}`);
-    }
   };
   return (
     <div className="new">
@@ -92,13 +92,13 @@ export default function NewPost() {
       <Form
         submitHandler={submitHandler}
         title={title}
-        author={author}
+        author={user && user.username}
         placeName={placeName}
         country={country}
         body={body}
         category={category}
         titleChangeHandler={(e) => setTitle(e.target.value)}
-        authorChangeHandler={(e) => setAuthor(e.target.value)}
+        authorChangeHandler={(e) => setAuthor(user && user.username)}
         placeNameChangeHandler={(e) => setPlaceName(e.target.value)}
         countryChangeHandler={(e) => setCountry(e.target.value)}
         bodyChangeHandler={(e) => setBody(e.target.value)}

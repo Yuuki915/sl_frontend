@@ -1,3 +1,5 @@
+import "../../../css/App.css";
+import "../../../css/Buttons.css";
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useRegister } from "../../../hooks/useRegister";
@@ -5,8 +7,6 @@ import { useAuthContext } from "../../../hooks/useAuthContext";
 
 import Footer from "../../partials/Footer";
 import Header from "../../partials/Header";
-import "../../../css/App.css";
-import "../../../css/Buttons.css";
 
 export default function Register() {
   const [username, setUsername] = useState("");

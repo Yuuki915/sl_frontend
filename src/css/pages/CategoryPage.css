@@ -30,8 +30,10 @@
   padding: 3rem 0;
 }
 .blog-cards {
+  height: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   padding: 5rem 0;
 }

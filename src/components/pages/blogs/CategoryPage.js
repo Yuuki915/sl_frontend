@@ -15,25 +15,39 @@ export default function CategoryPage() {
   const params = useParams();
   const { user } = useAuthContext();
 
+  const searchUsersBlog =
+    blogs && blogs.filter((item) => item.author === user.username);
+
   const catBlogs =
     blogs &&
     blogs.filter((blog) => {
       return blog.category === params.category;
     });
 
+  // params.category === "YourPosts" ? (
+  //   searchUsersBlog.author === user.username ?
+  //   <div className="blog-cards">
+  //     {searchUsersBlog &&
+  //       searchUsersBlog.map((blog) => (
+  //         <Card key={blog._id} blog={blog} />
+  //       ))}
+  //   </div>
+
   return (
     <div className="cat-page-wrapper">
       <Hamburger />
       <div className="category-page">
-        <div className="sidebar">
-          <Link to="/blogs" className="to-top">
-            Sharelog
-          </Link>
-          <div className="categories-wrapper">
-            <p className="show-current-category">{params.category}</p>
-            <div className="cat-options">
-              <h4>Categories</h4>
-              <Categories />
+        <div className="sidebar-container">
+          <div className="sidebar">
+            <Link to="/blogs" className="to-top">
+              Sharelog
+            </Link>
+            <div className="categories-wrapper">
+              <p className="show-current-category">{params.category}</p>
+              <div className="cat-options">
+                <h4>Categories</h4>
+                <Categories />
+              </div>
             </div>
           </div>
         </div>
@@ -56,15 +70,28 @@ export default function CategoryPage() {
               <></>
             )}
           </div>
-          {catBlogs.length > 1 ? (
+
+          {params.category === "YourPosts" ? (
+            searchUsersBlog.length < 1 ? (
+              <div className="blog-cards">No blogs yet</div>
+            ) : (
+              <div className="blog-cards">
+                {searchUsersBlog &&
+                  searchUsersBlog.map((blog) => (
+                    <Card key={blog._id} blog={blog} />
+                  ))}
+              </div>
+            )
+          ) : catBlogs.length < 1 ? (
+            <div className="blog-cards">No blogs yet</div>
+          ) : (
             <div className="blog-cards">
               {catBlogs &&
                 catBlogs.map((blog) => <Card key={blog._id} blog={blog} />)}
             </div>
-          ) : (
-            <div className="blog-cards">No blogs yet</div>
           )}
         </div>
+
         <Footer />
       </div>
     </div>

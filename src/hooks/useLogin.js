@@ -1,4 +1,5 @@
 // import axios from "axios";
+import axios from "axios";
 import { useState } from "react";
 import { useAuthContext } from "./useAuthContext";
 
@@ -11,7 +12,20 @@ export const useLogin = () => {
     setIsLoading(true);
     setError(null);
 
-    // const data = {  email, password };
+    const data = { username, email, password };
+    // console.log(data);
+    // await axios
+    //   .post(`/user/login`, data)
+    //   .then((res) => {
+    //     console.log(res.data);
+    //     dispatch({ type: "LOGIN", payload: res.data });
+    //     setIsLoading(false);
+    //   })
+    //   .catch((err) => {
+    //     setError(err);
+    //     console.log(err);
+    //   });
+
     const res = await fetch("/user/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -21,16 +35,6 @@ export const useLogin = () => {
         password,
       }),
     });
-
-    // axios
-    //   .post(`/blogs/new`, data)
-    //   .then((res) => {
-    //     console.log(res);
-    //     return res;
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
 
     const json = await res.json();
 
