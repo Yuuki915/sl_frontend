@@ -14,24 +14,12 @@ import axios from "axios";
 
 export default function Main() {
   const { user } = useAuthContext();
-
   const { blogs, dispatch } = useBlogsContext();
-
-  // useEffect(() => {
-  //   const fetchBlogs = async () => {
-  //     const res = await fetch("/blogs");
-  //     const json = await res.json();
-  //     if (res.ok) {
-  //       dispatch({ type: "SET_BLOGS", payload: json });
-  //     }
-  //   };
-  //   fetchBlogs();
-  // }, [dispatch]);
 
   useEffect(() => {
     const getBlogs = async () => {
       await axios.get("/blogs").then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         dispatch({ type: "SET_BLOGS", payload: res.data });
       });
     };
@@ -45,30 +33,9 @@ export default function Main() {
 
       <Hamburger />
 
-      {/* <div className="header">
-        {user && (
-          <div>
-            <span>{user.username}</span>
-            <Link to="/blogs" className="btn logout-btn" onClick={handleLogout}>
-              Logout
-            </Link>
-          </div>
-        )}
-        {!user && (
-          <div>
-            <Link to="/user/login" className="auth-link">
-              Login
-            </Link>
-            <Link to="/user/register" className="auth-link">
-              Register
-            </Link>
-          </div>
-        )}
-      </div> */}
-
       <p className="subtitle">Share your favorite</p>
 
-      {user ? (
+      {user && user ? (
         <div className="btn-container">
           <button className="add-btn">
             <Link to="/blogs/new">Post a Blog</Link>

@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useAuthContext } from "../../hooks/useAuthContext";
+// import { useAuthContext } from "../../hooks/useAuthContext";
 
 export default function Form(props) {
-  const { user } = useAuthContext();
+  // const { user } = useAuthContext();
 
   const options = [
     "Food",
@@ -15,6 +15,7 @@ export default function Form(props) {
     "Books",
     "Other",
   ];
+
   return (
     <form onSubmit={props.submitHandler}>
       <div className="input-container">
@@ -37,27 +38,46 @@ export default function Form(props) {
         <input
           type="text"
           name="author"
-          onChange={props.authorChangeHandler}
-          value={props.author}
+          // onChange={props.authorChangeHandler}
+          defaultValue={props.author}
+          disabled
         />
       </div>
 
       <div className="input-container">
-        <label htmlFor="placeName" className="label">
-          Name of the place
+        <label htmlFor="category" className="label">
+          Category
+        </label>
+        <select
+          className="category-select"
+          defaultValue={props?.category}
+          onChange={props.categoryChangeHandler}
+        >
+          <option value="">--Choose an option--</option>
+          {options.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <div className="input-container">
+        <label htmlFor="favorite" className="label">
+          Your favorite is ...
         </label>
         <input
           type="text"
-          name="placeName"
+          name="favorite"
           required
-          onChange={props.placeNameChangeHandler}
-          value={props.placeName}
+          onChange={props.favoriteChangeHandler}
+          value={props.favorite}
         />
       </div>
-
+      {/* 
       <div className="input-container">
         <label htmlFor="country" className="label">
-          Country
+          Where is it? (country, city or ...?)
         </label>
         <input
           type="text"
@@ -66,7 +86,7 @@ export default function Form(props) {
           onChange={props.countryChangeHandler}
           value={props.country}
         />
-      </div>
+      </div> */}
 
       <div className="input-container">
         <label htmlFor="body" className="label">
@@ -82,7 +102,9 @@ export default function Form(props) {
       </div>
 
       <div className="input-container">
-        <label htmlFor="img">Upload Image</label>
+        <label htmlFor="img">
+          Upload Image / <span className="imgsize-info">Size limited: 25MB</span>
+        </label>
         <input
           type="file"
           filename="img"
@@ -90,23 +112,6 @@ export default function Form(props) {
           id="img"
           onChange={props.handleAddImg}
         />
-      </div>
-
-      <div className="input-container">
-        <label htmlFor="category" className="label">
-          Category
-        </label>
-        <select
-          className="category-select"
-          onChange={props.categoryChangeHandler}
-        >
-          <option value="">--Choose an option--</option>
-          {options.map((option) => (
-            <option key={option} value={option}>
-              {option}
-            </option>
-          ))}
-        </select>
       </div>
 
       <div className="input-container input-container-btns">

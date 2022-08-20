@@ -1,14 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 export default function Categories() {
+  const { user } = useAuthContext();
+
   return (
     <div className="categories">
       <Link to="/blogs/category/Food" className="cat">
         Food
       </Link>
       <Link to="/blogs/category/Places" className="cat">
-        Places
+        Cafes
       </Link>
       <Link to="/blogs/category/Animals" className="cat">
         Animals
@@ -28,6 +31,11 @@ export default function Categories() {
       <Link to="/blogs/category/Other" className="cat">
         Other
       </Link>
+      {user && (
+        <Link to="/blogs/category/YourPosts" className="cat">
+          Your Posts
+        </Link>
+      )}
     </div>
   );
 }

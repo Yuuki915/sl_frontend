@@ -9,8 +9,10 @@ import axios from "axios";
 import Form from "../../partials/Form";
 import Header from "../../partials/Header";
 import Footer from "../../partials/Footer";
+import { useAuthContext } from "../../../hooks/useAuthContext";
 
 export default function Edit() {
+  const { user } = useAuthContext();
   const { blogs, dispatch } = useBlogsContext();
   const navigate = useNavigate();
   const params = useParams();
@@ -18,13 +20,13 @@ export default function Edit() {
   const blog = blogs && blogs.find((item) => item._id === params.id);
 
   const [titleEdited, setTitleEdited] = useState(`${blog && blog.title}`);
-  const [authorEdited, setAuthorEdited] = useState(`${blog && blog.author}`);
+  // const [authorEdited, setAuthorEdited] = useState(`${blog && blog.author}`);
   const [bodyEdited, setBodyEdited] = useState(`${blog && blog.body}`);
   const [imgEdited, setImgEdited] = useState(`${blog && blog.img}`);
-  const [placeNameEdited, setPlaceNameEdited] = useState(
-    `${blog && blog.placeName}`
+  const [favoriteEdited, setfavoriteEdited] = useState(
+    `${blog && blog.favorite}`
   );
-  const [countryEdited, setCountryEdited] = useState(`${blog && blog.country}`);
+  // const [countryEdited, setCountryEdited] = useState(`${blog && blog.country}`);
   const [categoryEdited, setCategoryEdited] = useState(
     `${blog && blog.category}`
   );
@@ -57,44 +59,28 @@ export default function Edit() {
 
     const data = {
       title: titleEdited,
-      author: authorEdited,
+      author: user && user.username,
       body: bodyEdited,
       img: imgEdited,
-      placeName: placeNameEdited,
-      country: countryEdited,
+      favorite: favoriteEdited,
+      // country: countryEdited,
       category: categoryEdited,
+      slug: titleEdited,
     };
 
-    console.log(data);
-    const res = await axios
+    await axios
       .put(`/blogs/edit/${blog && blog._id}`, data)
-      .then((res) => {
-        console.log(res);
+      .then(async (res) => {
+        console.log("update return: ", res.data);
+        await dispatch({ type: "UPDATE_BLOG", payload: res.data });
+        navigate(`/blogs/${res.data.slug}`);
         return res;
       })
       .catch((err) => {
+        setError(err);
         console.log(err);
       });
-
-    const json = await res.json();
-
-    if (!res.ok) {
-      setError(json.error);
-      console.log(error);
-    }
-    if (res.ok) {
-      console.log(data);
-      setTitleEdited("");
-      setAuthorEdited("");
-      setBodyEdited("");
-      setImgEdited("");
-      setPlaceNameEdited("");
-      setCountryEdited("");
-      setCategoryEdited("");
-      console.log("new blog edited!", json);
-      dispatch({ type: "UPDATE_BLOG", payload: json });
-      navigate(`/blogs/${json.slug}`);
-    }
+    console.log(data);
   };
 
   return (
@@ -105,14 +91,15 @@ export default function Edit() {
       <Form
         submitHandler={updateHandler}
         title={titleEdited}
-        author={authorEdited}
-        placeName={placeNameEdited}
-        country={countryEdited}
+        author={user && user.username}
+        favorite={favoriteEdited}
+        // country={countryEdited}
         body={bodyEdited}
+        category={categoryEdited}
         titleChangeHandler={(e) => setTitleEdited(e.target.value)}
-        authorChangeHandler={(e) => setAuthorEdited(e.target.value)}
-        placeNameChangeHandler={(e) => setPlaceNameEdited(e.target.value)}
-        countryChangeHandler={(e) => setCountryEdited(e.target.value)}
+        // authorChangeHandler={(e) => setAuthorEdited(e.target.value)}
+        favoriteChangeHandler={(e) => setfavoriteEdited(e.target.value)}
+        // countryChangeHandler={(e) => setCountryEdited(e.target.value)}
         bodyChangeHandler={(e) => setBodyEdited(e.target.value)}
         categoryChangeHandler={(e) => setCategoryEdited(e.target.value)}
         handleAddImg={handleEditImg}

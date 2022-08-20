@@ -176,6 +176,7 @@
   height: 85%;
   border: 1px solid #fff;
   transition: 0.3s;
+  /* z-index: 1; */
 }
 .blog-container:hover {
   color: #fff;

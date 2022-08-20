@@ -19,11 +19,11 @@ export default function NewPost() {
   const navigate = useNavigate();
 
   const [title, setTitle] = useState("");
-  const [author, setAuthor] = useState("");
+  // const [author, setAuthor] = useState("");
   const [body, setBody] = useState("");
   const [img, setImg] = useState("");
-  const [placeName, setPlaceName] = useState("");
-  const [country, setCountry] = useState("");
+  const [favorite, setfavorite] = useState("");
+  // const [country, setCountry] = useState("");
   const [category, setCategory] = useState("");
   const [error, setError] = useState(null);
 
@@ -55,11 +55,11 @@ export default function NewPost() {
 
     const data = {
       title: title,
-      author: user.username,
+      author: user && user.username,
       body: body,
       img: img,
-      placeName: placeName,
-      country: country,
+      favorite: favorite,
+      // country: country,
       category: category,
     };
 
@@ -93,14 +93,14 @@ export default function NewPost() {
         submitHandler={submitHandler}
         title={title}
         author={user && user.username}
-        placeName={placeName}
-        country={country}
+        favorite={favorite}
+        // country={country}
         body={body}
         category={category}
         titleChangeHandler={(e) => setTitle(e.target.value)}
-        authorChangeHandler={(e) => setAuthor(user && user.username)}
-        placeNameChangeHandler={(e) => setPlaceName(e.target.value)}
-        countryChangeHandler={(e) => setCountry(e.target.value)}
+        // authorChangeHandler={(e) => setAuthor(user && user.username)}
+        favoriteChangeHandler={(e) => setfavorite(e.target.value)}
+        // countryChangeHandler={(e) => setCountry(e.target.value)}
         bodyChangeHandler={(e) => setBody(e.target.value)}
         categoryChangeHandler={(e) => setCategory(e.target.value)}
         handleAddImg={handleAddImg}

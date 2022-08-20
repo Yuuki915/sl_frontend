@@ -34,3 +34,13 @@
 .label {
   display: block;
 }
+.imgsize-info {
+  font-size: 12px;
+}
+
+@media (max-width: 890px) {
+  .new,
+  .edit {
+    width: 100%;
+  }
+}

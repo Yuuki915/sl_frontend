@@ -1,4 +1,3 @@
-// import React from "react";
 import React from "react";
 
 import { Link } from "react-router-dom";
@@ -10,18 +9,15 @@ export default function Home() {
     <div className="home">
       <Header />
 
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <div className="home">
-        <div className="home-container">
-          <h1>Home</h1>
-          <div className="input-container">
-            <Link to="/user/login" className="btn can-btn login-btn">
-              Login
-            </Link>
-            <Link to="/user/register" className="btn save-btn register-btn">
-              Register
-            </Link>
-          </div>
-        </div>
+        Welcome
+        <Link to="/blogs">Sharelog</Link>
       </div>
 
       <Footer />

@@ -1,7 +1,7 @@
 import "../../../css/App.css";
 import "../../../css/Buttons.css";
 import "../../../css/pages/Show.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useBlogsContext } from "../../../hooks/useBlogsContext";
@@ -22,7 +22,7 @@ export default function Show() {
   const [error, setError] = useState(null);
 
   const blog = blogs && blogs.find((item) => item.slug === params.slug);
-  console.log(blog);
+
   const handleDelete = async () => {
     if (!user) {
       return;
@@ -39,23 +39,12 @@ export default function Show() {
         setError(err);
         console.log(err);
       });
-
-    // const res = await fetch(`/blogs/${blog && blog._id}`, {
-    //   method: "DELETE",
-    //   headers: {
-    //     Authorization: `Bearer ${user.token}`,
-    //   },
-    // });
-    // const json = await res.json();
-
-    // if (res.ok) {
-    //   dispatch({ type: "DELETE_BLOG", payload: json });
-    // }
   };
 
   return (
     <>
       <Hamburger />
+
       <div className="show">
         <div className="sidebar-container">
           <div className="sidebar">
@@ -80,7 +69,7 @@ export default function Show() {
                 <span>Top page</span>
               </Link>
             </button>
-            {user ? (
+            {user && user ? (
               <button className="addmore-btn">
                 <Link to="/blogs/new" className="addmore-link">
                   <span>Add Blog</span>
@@ -91,12 +80,15 @@ export default function Show() {
             )}
           </div>
           <div className="blog-detail">
-            <h1 className="show-title">{blog && blog.title}</h1>
-            <h6 className="show-time">
-              {format(new Date(blog && blog.createdAt), "MM.dd.yyyy")}
-            </h6>
-            <div className="author-info">
-              <p className="show-auth">@{user.username}</p>
+            <h1 className="show-title">
+              {blog && blog.title}
+              <p className="title-border"></p>
+            </h1>
+            <div className="show-author-date">
+              <p className="show-auth">@{blog && blog.author}</p>
+              <h6 className="show-date">
+                {format(new Date(blog && blog.createdAt), "MM.dd.yyyy")}
+              </h6>
             </div>
 
             <div className="show-img">
@@ -104,19 +96,23 @@ export default function Show() {
             </div>
 
             <div className="show-texts">
-              <div className="show-place">
-                <p>My favorite place is ...</p>
-                <p>{blog && blog.placeName}</p>
+              <div className="show-favorite">
+                <p>My favorite is... {blog && blog.favorite}</p>
               </div>
-              <div className="show-country">
-                <p>In</p>
+              {/* <div className="show-country">
+                <p>It's in </p>
                 <p>{blog && blog.country}</p>
-              </div>
-              <p className="show-body">{blog && blog.body}</p>
+              </div> */}
+              <p className="show-body">
+                {blog &&
+                  blog.body
+                    .split(/(\n)/g)
+                    .map((str, key) => (str === "\n" ? <br key={key} /> : str))}
+              </p>
             </div>
           </div>
 
-          {user.username === blog.author ? (
+          {user && user.username === blog.author ? (
             <div className="btns">
               <Link to="/blogs" className="btn del-btn" onClick={handleDelete}>
                 Delete

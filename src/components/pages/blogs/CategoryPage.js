@@ -16,22 +16,14 @@ export default function CategoryPage() {
   const { user } = useAuthContext();
 
   const searchUsersBlog =
-    blogs && blogs.filter((item) => item.author === user.username);
+    blogs && blogs.filter((item) => user && user.username === item.author);
+  console.log(searchUsersBlog);
 
   const catBlogs =
     blogs &&
     blogs.filter((blog) => {
       return blog.category === params.category;
     });
-
-  // params.category === "YourPosts" ? (
-  //   searchUsersBlog.author === user.username ?
-  //   <div className="blog-cards">
-  //     {searchUsersBlog &&
-  //       searchUsersBlog.map((blog) => (
-  //         <Card key={blog._id} blog={blog} />
-  //       ))}
-  //   </div>
 
   return (
     <div className="cat-page-wrapper">
@@ -60,7 +52,7 @@ export default function CategoryPage() {
                 <span>Top page</span>
               </Link>
             </button>
-            {user ? (
+            {user && user ? (
               <button className="addmore-btn">
                 <Link to="/blogs/new" className="addmore-link">
                   <span>Add Blog</span>
