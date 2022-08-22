@@ -17,7 +17,7 @@ export const useRegister = () => {
       .post(`/user/register`, data)
       .then((res) => {
         console.log(res.data);
-        localStorage.setItem("user", JSON.stringify(data));
+        localStorage.setItem("authcontent", JSON.stringify(data));
         dispatch({ type: "LOGIN", payload: res.data });
         setIsLoading(false);
       })

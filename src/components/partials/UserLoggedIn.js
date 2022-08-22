@@ -6,11 +6,9 @@ import { useLogout } from "../../hooks/useLogout";
 import { BiUserCircle } from "react-icons/bi";
 
 export default function UserLoggedIn() {
-  const [logoutClass, setLogoutClass] = useState(false);
-
-  const { logout } = useLogout();
-
   const { user } = useAuthContext();
+  const { logout } = useLogout();
+  const [logoutClass, setLogoutClass] = useState(false);
 
   const handleLogout = () => {
     logout();

@@ -1,9 +1,8 @@
-import React, { createContext, useReducer } from "react";
+import React, { createContext, useEffect, useReducer } from "react";
 
 export const BlogsContext = createContext();
 
 export const blogsReducer = (state, action) => {
-
   switch (action.type) {
     case "SET_BLOGS":
       return {
@@ -20,10 +19,9 @@ export const blogsReducer = (state, action) => {
     case "UPDATE_BLOG":
       return {
         blogs: state.blogs.map((blog) => {
-          if (blog._id === action.payload._id) {
-            return [...blog];
-          }
-          return { blog: [action.payload, ...state.blog] };
+          return blog._id === action.payload._id
+            ? { ...state, ...action.payload }
+            : blog;
         }),
       };
     default:
@@ -31,10 +29,19 @@ export const blogsReducer = (state, action) => {
   }
 };
 
+const localState = JSON.parse(localStorage.getItem("blogcontent"));
+
 export const BlogsContextProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(blogsReducer, {
-    blogs: null,
-  });
+  const [state, dispatch] = useReducer(
+    blogsReducer,
+    localState || {
+      blogs: null,
+    }
+  );
+
+  useEffect(() => {
+    localStorage.setItem("blogcontent", JSON.stringify(state));
+  }, [state]);
 
   return (
     <BlogsContext.Provider value={{ ...state, dispatch }}>

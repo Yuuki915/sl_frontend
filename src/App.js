@@ -12,25 +12,13 @@ import NewPost from "./components/pages/blogs/NewPost";
 import Edit from "./components/pages/blogs/Edit";
 import Show from "./components/pages/blogs/Show";
 import CategoryPage from "./components/pages/blogs/CategoryPage";
+import ScrollTop from "./components/partials/ScrollTop";
 
 function App() {
-  // const { blogs, dispatch } = useBlogsContext();
-
-  // useEffect(() => {
-  //   const fetchBlogs = async () => {
-  //     const res = await fetch(`/blogs`);
-  //     const json = await res.json();
-  //     if (res.ok) {
-  //       dispatch({ type: "SET_BLOGS", payload: json });
-  //     }
-  //   };
-  //   fetchBlogs();
-  // }, [dispatch]);
-  // console.log(blogs);
-
   return (
     <div className="App">
       <Router>
+        <ScrollTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/user/login" element={<Login />} />
