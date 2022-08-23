@@ -31,7 +31,7 @@ export default function Show() {
     await axios
       .delete(`/blogs/${blog && blog._id}`)
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         dispatch({ type: "DELETE_BLOG", payload: res.data });
         navigate(`/blogs`);
       })
@@ -100,7 +100,7 @@ export default function Show() {
                 <p>My favorite is... {blog && blog.favorite}</p>
               </div>
               <p className="show-body">
-                {blog &&
+                {Array.isArray(blog) &&
                   blog.body
                     .split(/(\n)/g)
                     .map((str, key) => (str === "\n" ? <br key={key} /> : str))}

@@ -38,7 +38,7 @@ export default function Edit() {
     return new Promise((resolve, reject) => {
       const fileReader = new FileReader();
       fileReader.readAsDataURL(file);
-      console.log(file);
+      // console.log(file);
       fileReader.onload = () => {
         resolve(fileReader.result);
       };
@@ -70,7 +70,7 @@ export default function Edit() {
     await axios
       .put(`/blogs/edit/${blog && blog._id}`, data)
       .then(async (res) => {
-        console.log("update return: ", res.data);
+        // console.log("update return: ", res.data);
         await dispatch({ type: "UPDATE_BLOG", payload: res.data });
         navigate(`/blogs/${res.data.slug}`);
         return res;
@@ -79,7 +79,6 @@ export default function Edit() {
         setError(err);
         console.log(error);
       });
-    console.log(data);
   };
 
   return (

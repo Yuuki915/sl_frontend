@@ -9,15 +9,12 @@ export default function Home() {
     <div className="home">
       <Header />
 
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <div className="home">
-        Welcome
-        <Link to="/blogs">Sharelog</Link>
+      <div className="topage">
+        <div>
+          <p>Welcome</p>
+          <p>to</p>
+          <Link to="/blogs">Sharelog</Link>
+        </div>
       </div>
 
       <Footer />

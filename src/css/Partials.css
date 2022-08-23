@@ -4,7 +4,7 @@
 .header {
   position: fixed;
   top: 0;
-  left: 0ch;
+  left: 0;
   padding: 1rem 0;
   width: 100vw;
   padding: 2rem;
@@ -16,6 +16,12 @@
   color: #fff;
   text-shadow: 1px 1px 3px rgb(187, 221, 215);
 }
+
+.main .header {
+  justify-content: right;
+  padding: 1rem;
+}
+
 .show .header,
 .edit .header,
 .new .header {
@@ -30,8 +36,20 @@
   margin: 0 0.5rem;
 }
 
-.footer {
+/*  */
+
+.footer p {
   padding: 1rem 0;
   width: 100vw;
   background-color: rgba(255, 255, 255, 0.7);
+}
+.home .footer {
+  position: fixed;
+  bottom: 0;
+}
+.login .footer p,
+.register .footer p {
+  position: fixed;
+  bottom: 0;
+  left: 0ch;
 }
