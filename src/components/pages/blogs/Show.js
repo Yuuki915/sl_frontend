@@ -37,7 +37,7 @@ export default function Show() {
       })
       .catch((err) => {
         setError(err);
-        console.log(err);
+        console.log(error);
       });
   };
 

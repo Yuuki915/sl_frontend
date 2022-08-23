@@ -23,7 +23,7 @@ export const useLogin = () => {
       })
       .catch((err) => {
         setError(err);
-        console.log(err);
+        console.log(error);
       });
   };
 

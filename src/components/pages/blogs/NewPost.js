@@ -50,6 +50,7 @@ export default function NewPost() {
 
     if (!user) {
       setError("Please login.");
+      console.log(error);
     }
 
     const data = {
@@ -70,7 +71,7 @@ export default function NewPost() {
       })
       .catch((err) => {
         setError(err);
-        console.log(err);
+        console.log(error);
       });
   };
   return (

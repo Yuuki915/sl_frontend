@@ -77,7 +77,7 @@ export default function Edit() {
       })
       .catch((err) => {
         setError(err);
-        console.log(err);
+        console.log(error);
       });
     console.log(data);
   };

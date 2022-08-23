@@ -113,7 +113,7 @@
 .show-author-date {
   display: flex;
   justify-content: space-evenly;
-  align-items: end;
+  align-items: flex-end;
   padding-top: 0.5rem;
 }
 .show-auth {

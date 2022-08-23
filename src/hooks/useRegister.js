@@ -23,7 +23,7 @@ export const useRegister = () => {
       })
       .catch((err) => {
         setError(err);
-        console.log(err);
+        console.log(error);
       });
   };
 
