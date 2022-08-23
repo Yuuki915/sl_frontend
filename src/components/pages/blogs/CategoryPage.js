@@ -16,11 +16,12 @@ export default function CategoryPage() {
   const { user } = useAuthContext();
 
   const searchUsersBlog =
-    blogs && blogs.filter((item) => user && user.username === item.author);
-  console.log(searchUsersBlog);
+    Array.isArray(blogs) &&
+    blogs.filter((item) => user && user.username === item.author);
+  // console.log(searchUsersBlog);
 
   const catBlogs =
-    blogs &&
+    Array.isArray(blogs) &&
     blogs.filter((blog) => {
       return blog.category === params.category;
     });

@@ -16,7 +16,7 @@ export const useRegister = () => {
     await axios
       .post(`/user/register`, data)
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         localStorage.setItem("authcontent", JSON.stringify(data));
         dispatch({ type: "LOGIN", payload: res.data });
         setIsLoading(false);

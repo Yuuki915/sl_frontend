@@ -26,7 +26,7 @@
   justify-content: space-between;
   flex-direction: column;
   transition: 0.5s ease-in-out;
-  z-index: 3;
+  z-index: 100;
 }
 .ham-toggle {
   right: -300px;

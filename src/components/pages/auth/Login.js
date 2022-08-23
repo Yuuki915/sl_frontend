@@ -33,6 +33,7 @@ export default function Login() {
   return (
     <div className="login">
       <Header />
+
       <div className="login-container">
         <h1>Login</h1>
 
@@ -94,7 +95,9 @@ export default function Login() {
 
           {error && <div className="error">{error}</div>}
         </form>
+
       </div>
+      
       <Footer />
     </div>
   );

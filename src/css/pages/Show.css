@@ -121,12 +121,9 @@
   padding-left: 1rem;
 }
 .show-place,
-/* .show-country, */
 .show-body {
   margin: 2rem 0;
-}
-.show-body {
-  text-align-last: left;
+  text-align-last: center;
 }
 
 @media (max-width: 890px) {

@@ -30,7 +30,7 @@ export default function NewPost() {
     return new Promise((resolve, reject) => {
       const fileReader = new FileReader();
       fileReader.readAsDataURL(file);
-      console.log(file);
+      // console.log(file);
       fileReader.onload = () => {
         resolve(fileReader.result);
       };
@@ -65,7 +65,7 @@ export default function NewPost() {
     await axios
       .post("/blogs/new", data)
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         dispatch({ type: "CREATE_BLOG", payload: res.data });
         navigate(`/blogs/${res.data.slug}`);
       })
