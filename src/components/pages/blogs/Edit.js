@@ -63,7 +63,6 @@ export default function Edit() {
       body: bodyEdited,
       img: imgEdited,
       favorite: favoriteEdited,
-      // country: countryEdited,
       category: categoryEdited,
       slug: titleEdited,
     };
@@ -93,13 +92,11 @@ export default function Edit() {
         title={titleEdited}
         author={user && user.username}
         favorite={favoriteEdited}
-        // country={countryEdited}
         body={bodyEdited}
         category={categoryEdited}
         titleChangeHandler={(e) => setTitleEdited(e.target.value)}
         // authorChangeHandler={(e) => setAuthorEdited(e.target.value)}
         favoriteChangeHandler={(e) => setfavoriteEdited(e.target.value)}
-        // countryChangeHandler={(e) => setCountryEdited(e.target.value)}
         bodyChangeHandler={(e) => setBodyEdited(e.target.value)}
         categoryChangeHandler={(e) => setCategoryEdited(e.target.value)}
         handleAddImg={handleEditImg}

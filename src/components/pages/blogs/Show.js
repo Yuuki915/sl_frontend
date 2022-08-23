@@ -1,7 +1,7 @@
 import "../../../css/App.css";
 import "../../../css/Buttons.css";
 import "../../../css/pages/Show.css";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useBlogsContext } from "../../../hooks/useBlogsContext";
@@ -99,10 +99,6 @@ export default function Show() {
               <div className="show-favorite">
                 <p>My favorite is... {blog && blog.favorite}</p>
               </div>
-              {/* <div className="show-country">
-                <p>It's in </p>
-                <p>{blog && blog.country}</p>
-              </div> */}
               <p className="show-body">
                 {blog &&
                   blog.body

@@ -17,26 +17,16 @@ export const authReducer = (state, action) => {
   }
 };
 
-// const localState = JSON.parse(localStorage.getItem("authcontent"));
-
 export const AuthContextProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(
-    authReducer,
-    // localState ||
-    {
-      user: null,
-    }
-  );
+  const [state, dispatch] = useReducer(authReducer, {
+    user: null,
+  });
 
   useEffect(() => {
-    // localStorage.setItem("authcontent", JSON.stringify(state));
-
     const user = JSON.parse(localStorage.getItem("authcontent"));
-
-    // if (localState.user) {
     dispatch({ type: "LOGIN", payload: user });
-    // }
   }, []);
+
   console.log("AuthContext state: ", state);
 
   return (

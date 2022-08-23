@@ -1,10 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import { useAuthContext } from "../../hooks/useAuthContext";
 
 export default function Form(props) {
-  // const { user } = useAuthContext();
-
   const options = [
     "Food",
     "Places",
@@ -35,13 +32,7 @@ export default function Form(props) {
         <label htmlFor="author" className="label">
           Author
         </label>
-        <input
-          type="text"
-          name="author"
-          // onChange={props.authorChangeHandler}
-          defaultValue={props.author}
-          disabled
-        />
+        <input type="text" name="author" defaultValue={props.author} disabled />
       </div>
 
       <div className="input-container">
@@ -74,19 +65,6 @@ export default function Form(props) {
           value={props.favorite}
         />
       </div>
-      {/* 
-      <div className="input-container">
-        <label htmlFor="country" className="label">
-          Where is it? (country, city or ...?)
-        </label>
-        <input
-          type="text"
-          name="country"
-          required
-          onChange={props.countryChangeHandler}
-          value={props.country}
-        />
-      </div> */}
 
       <div className="input-container">
         <label htmlFor="body" className="label">
@@ -103,7 +81,8 @@ export default function Form(props) {
 
       <div className="input-container">
         <label htmlFor="img">
-          Upload Image / <span className="imgsize-info">Size limited: 25MB</span>
+          Upload Image /{" "}
+          <span className="imgsize-info">Size limited: 25MB</span>
         </label>
         <input
           type="file"

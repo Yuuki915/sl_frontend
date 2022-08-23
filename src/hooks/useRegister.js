@@ -25,26 +25,6 @@ export const useRegister = () => {
         setError(err);
         console.log(err);
       });
-
-    // const res = await fetch("/user/register", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify({ username, email, password }),
-    // });
-
-    // const json = await res.json();
-
-    // if (!res.ok) {
-    //   setIsLoading(false);
-    //   setError(json.error);
-    // }
-    // if (res.ok) {
-    //   // save user
-    //   localStorage.setItem("user", JSON.stringify(json));
-    //   dispatch({ type: "LOGIN", payload: json });
-
-    //   setIsLoading(false);
-    // }
   };
 
   return { register, isLoading, error };

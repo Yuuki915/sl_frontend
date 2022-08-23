@@ -23,7 +23,6 @@ export default function NewPost() {
   const [body, setBody] = useState("");
   const [img, setImg] = useState("");
   const [favorite, setfavorite] = useState("");
-  // const [country, setCountry] = useState("");
   const [category, setCategory] = useState("");
   const [error, setError] = useState(null);
 
@@ -59,18 +58,8 @@ export default function NewPost() {
       body: body,
       img: img,
       favorite: favorite,
-      // country: country,
       category: category,
     };
-
-    // const res = await fetch("/blogs/new", {
-    //   method: "POST",
-    //   body: JSON.stringify(blog),
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     Authorization: `Bearer ${user.token}`,
-    //   },
-    // });
 
     await axios
       .post("/blogs/new", data)
@@ -94,13 +83,11 @@ export default function NewPost() {
         title={title}
         author={user && user.username}
         favorite={favorite}
-        // country={country}
         body={body}
         category={category}
         titleChangeHandler={(e) => setTitle(e.target.value)}
         // authorChangeHandler={(e) => setAuthor(user && user.username)}
         favoriteChangeHandler={(e) => setfavorite(e.target.value)}
-        // countryChangeHandler={(e) => setCountry(e.target.value)}
         bodyChangeHandler={(e) => setBody(e.target.value)}
         categoryChangeHandler={(e) => setCategory(e.target.value)}
         handleAddImg={handleAddImg}

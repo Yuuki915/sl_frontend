@@ -1,8 +1,6 @@
 import "./css/App.css";
 import "./css/Buttons.css";
-// import { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-// import { useBlogsContext } from "./hooks/useBlogsContext";
 
 import Login from "./components/pages/auth/Login";
 import Register from "./components/pages/auth/Register";
