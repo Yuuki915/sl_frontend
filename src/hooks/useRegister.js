@@ -1,6 +1,5 @@
-// import axios from "axios";
-import axios from "axios";
 import { useState } from "react";
+import axiosBaseURL from "../config";
 import { useAuthContext } from "./useAuthContext";
 
 export const useRegister = () => {
@@ -13,7 +12,7 @@ export const useRegister = () => {
     setError(null);
 
     const data = { username, email, password };
-    await axios
+    await axiosBaseURL
       .post(`/user/register`, data)
       .then((res) => {
         // console.log(res.data);
