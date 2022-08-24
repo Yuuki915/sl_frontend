@@ -1,16 +1,17 @@
 import "../../css/App.css";
 import "../../css/Buttons.css";
 import "../../css/pages/Main.css";
+import axios from "axios";
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useBlogsContext } from "../../hooks/useBlogsContext";
 import { useAuthContext } from "../../hooks/useAuthContext";
+import BACKEND_URL from "../../config";
 
 import Categories from "../partials/Categories";
 import Footer from "../partials/Footer";
 import Blogs from "./blogs/Blogs";
 import Hamburger from "../partials/Hamburger";
-import axiosBaseURL from "../../config";
 
 export default function Main() {
   const { user } = useAuthContext();
@@ -18,7 +19,7 @@ export default function Main() {
 
   useEffect(() => {
     const getBlogs = async () => {
-      await axiosBaseURL.get("/blogs").then((res) => {
+      await axios.get(`${BACKEND_URL}/blogs`).then((res) => {
         // console.log(res.data);
         dispatch({ type: "SET_BLOGS", payload: res.data });
       });

@@ -1,5 +1,6 @@
+import axios from "axios";
 import { useState } from "react";
-import axiosBaseURL from "../config";
+import BACKEND_URL from "../config";
 import { useAuthContext } from "./useAuthContext";
 
 export const useLogin = () => {
@@ -12,8 +13,8 @@ export const useLogin = () => {
     setError(null);
 
     const data = { username, email, password };
-    await axiosBaseURL
-      .post(`/user/login`, data)
+    await axios
+      .post(`${BACKEND_URL}/user/login`, data)
       .then((res) => {
         // console.log(res.data);
         localStorage.setItem("authcontent", JSON.stringify(data));

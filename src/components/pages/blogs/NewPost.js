@@ -10,7 +10,8 @@ import { useBlogsContext } from "../../../hooks/useBlogsContext";
 import Footer from "../../partials/Footer";
 import Form from "../../partials/Form";
 import Header from "../../partials/Header";
-import axiosBaseURL from "../../../config";
+import axios from "axios";
+import BACKEND_URL from "../../../config";
 
 export default function NewPost() {
   const { dispatch } = useBlogsContext();
@@ -62,8 +63,8 @@ export default function NewPost() {
       category: category,
     };
 
-    await axiosBaseURL
-      .post("/blogs/new", data)
+    await axios
+      .post(`${BACKEND_URL}/blogs/new`, data)
       .then((res) => {
         // console.log(res.data);
         dispatch({ type: "CREATE_BLOG", payload: res.data });
