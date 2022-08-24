@@ -10,7 +10,7 @@ import Categories from "../partials/Categories";
 import Footer from "../partials/Footer";
 import Blogs from "./blogs/Blogs";
 import Hamburger from "../partials/Hamburger";
-import axios from "axios";
+import axiosBaseURL from "../../config";
 
 export default function Main() {
   const { user } = useAuthContext();
@@ -18,7 +18,7 @@ export default function Main() {
 
   useEffect(() => {
     const getBlogs = async () => {
-      await axios.get("/blogs").then((res) => {
+      await axiosBaseURL.get("/blogs").then((res) => {
         // console.log(res.data);
         dispatch({ type: "SET_BLOGS", payload: res.data });
       });

@@ -4,12 +4,12 @@ import "../../../css/pages/NewEdit.css";
 import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useBlogsContext } from "../../../hooks/useBlogsContext";
-import axios from "axios";
 
 import Form from "../../partials/Form";
 import Header from "../../partials/Header";
 import Footer from "../../partials/Footer";
 import { useAuthContext } from "../../../hooks/useAuthContext";
+import axiosBaseURL from "../../../config";
 
 export default function Edit() {
   const { user } = useAuthContext();
@@ -67,7 +67,7 @@ export default function Edit() {
       slug: titleEdited,
     };
 
-    await axios
+    await axiosBaseURL
       .put(`/blogs/edit/${blog && blog._id}`, data)
       .then(async (res) => {
         // console.log("update return: ", res.data);

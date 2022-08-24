@@ -1,5 +1,5 @@
-import axios from "axios";
 import { useState } from "react";
+import axiosBaseURL from "../config";
 import { useAuthContext } from "./useAuthContext";
 
 export const useLogin = () => {
@@ -12,7 +12,7 @@ export const useLogin = () => {
     setError(null);
 
     const data = { username, email, password };
-    await axios
+    await axiosBaseURL
       .post(`/user/login`, data)
       .then((res) => {
         // console.log(res.data);

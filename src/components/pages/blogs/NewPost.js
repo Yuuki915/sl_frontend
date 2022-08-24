@@ -3,7 +3,6 @@ import "../../../css/Buttons.css";
 import "../../../css/pages/NewEdit.css";
 
 import React, { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../../hooks/useAuthContext";
 import { useBlogsContext } from "../../../hooks/useBlogsContext";
@@ -11,6 +10,7 @@ import { useBlogsContext } from "../../../hooks/useBlogsContext";
 import Footer from "../../partials/Footer";
 import Form from "../../partials/Form";
 import Header from "../../partials/Header";
+import axiosBaseURL from "../../../config";
 
 export default function NewPost() {
   const { dispatch } = useBlogsContext();
@@ -62,7 +62,7 @@ export default function NewPost() {
       category: category,
     };
 
-    await axios
+    await axiosBaseURL
       .post("/blogs/new", data)
       .then((res) => {
         // console.log(res.data);

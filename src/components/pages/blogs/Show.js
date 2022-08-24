@@ -12,7 +12,7 @@ import { FiArrowLeftCircle } from "react-icons/fi";
 import Categories from "../../partials/Categories";
 import Footer from "../../partials/Footer";
 import Hamburger from "../../partials/Hamburger";
-import axios from "axios";
+import axiosBaseURL from "../../../config";
 
 export default function Show() {
   const { blogs, dispatch } = useBlogsContext();
@@ -28,7 +28,7 @@ export default function Show() {
       return;
     }
 
-    await axios
+    await axiosBaseURL
       .delete(`/blogs/${blog && blog._id}`)
       .then((res) => {
         // console.log(res.data);
