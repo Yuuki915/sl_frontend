@@ -1,5 +1,5 @@
 {
-  "proxy": "https://mern-sharelog-backend.herokuapp.com/",
+  "proxy": "https://mern-sharelog-backend.herokuapp.com",
   "name": "sl_frontend",
   "version": "0.1.0",
   "private": true,
@@ -14,7 +14,6 @@
     "react-icons": "^4.4.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
-    "serve": "^14.0.1",
     "store": "^2.0.12",
     "web-vitals": "^2.1.4"
   },
