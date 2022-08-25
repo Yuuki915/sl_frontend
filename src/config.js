@@ -1,7 +1,3 @@
-import axios from "axios";
+const BACKEND_URL = "https://mern-sharelog-backend.herokuapp.com";
 
-const axiosBaseURL = axios.create({
-  base_URL: "https://mern-sharelog-backend.herokuapp.com/",
-});
-
-export default axiosBaseURL;
+export default BACKEND_URL;

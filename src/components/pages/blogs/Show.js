@@ -8,11 +8,12 @@ import { useBlogsContext } from "../../../hooks/useBlogsContext";
 import { useAuthContext } from "../../../hooks/useAuthContext";
 import format from "date-fns/format";
 import { FiArrowLeftCircle } from "react-icons/fi";
+import axios from "axios";
+import BACKEND_URL from "../../../config";
 
 import Categories from "../../partials/Categories";
 import Footer from "../../partials/Footer";
 import Hamburger from "../../partials/Hamburger";
-import axiosBaseURL from "../../../config";
 
 export default function Show() {
   const { blogs, dispatch } = useBlogsContext();
@@ -28,8 +29,8 @@ export default function Show() {
       return;
     }
 
-    await axiosBaseURL
-      .delete(`/blogs/${blog && blog._id}`)
+    await axios
+      .delete(`${BACKEND_URL}/blogs/${blog && blog._id}`)
       .then((res) => {
         // console.log(res.data);
         dispatch({ type: "DELETE_BLOG", payload: res.data });
