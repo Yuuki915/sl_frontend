@@ -101,7 +101,7 @@ export default function Show() {
                 <p>My favorite is... {blog && blog.favorite}</p>
               </div>
               <p className="show-body">
-                {Array.isArray(blog) &&
+                {blog &&
                   blog.body
                     .split(/(\n)/g)
                     .map((str, key) => (str === "\n" ? <br key={key} /> : str))}
