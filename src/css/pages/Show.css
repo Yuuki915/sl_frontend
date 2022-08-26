@@ -95,7 +95,7 @@
 }
 .blog-detail {
   width: 80%;
-  margin: 8rem auto;
+  margin: 8rem auto 0;
   padding: 1rem;
   text-align: left;
 }
@@ -142,7 +142,7 @@
   }
   .blog-detail {
     width: 100%;
-    margin: 8rem 0;
+    margin: 8rem 0 0;
     padding: 0;
   }
 }
