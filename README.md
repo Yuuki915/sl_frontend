@@ -1,6 +1,6 @@
 # <a href="https://sharelog.pages.dev/">Sharelog</a>
 
-### test account
+### test account;
        username: yuyu
        email: yuyu@mail.com
        password: @Yuyu123
