@@ -83,26 +83,26 @@ export default function Edit() {
   };
 
   return (
-    <div className="edit">
-      <Header />
-
-      <h1 className="page-h1">Edit Blog</h1>
-      <Form
-        submitHandler={updateHandler}
-        title={titleEdited}
-        author={user && user.username}
-        favorite={favoriteEdited}
-        body={bodyEdited}
-        category={categoryEdited}
-        titleChangeHandler={(e) => setTitleEdited(e.target.value)}
-        // authorChangeHandler={(e) => setAuthorEdited(e.target.value)}
-        favoriteChangeHandler={(e) => setfavoriteEdited(e.target.value)}
-        bodyChangeHandler={(e) => setBodyEdited(e.target.value)}
-        categoryChangeHandler={(e) => setCategoryEdited(e.target.value)}
-        handleAddImg={handleEditImg}
-      />
-
+    <>
+      <div className="edit">
+        <Header />
+        <h1 className="page-h1">Edit Blog</h1>
+        <Form
+          submitHandler={updateHandler}
+          title={titleEdited}
+          author={user && user.username}
+          favorite={favoriteEdited}
+          body={bodyEdited}
+          category={categoryEdited}
+          titleChangeHandler={(e) => setTitleEdited(e.target.value)}
+          // authorChangeHandler={(e) => setAuthorEdited(e.target.value)}
+          favoriteChangeHandler={(e) => setfavoriteEdited(e.target.value)}
+          bodyChangeHandler={(e) => setBodyEdited(e.target.value)}
+          categoryChangeHandler={(e) => setCategoryEdited(e.target.value)}
+          handleAddImg={handleEditImg}
+        />
+      </div>
       <Footer />
-    </div>
+    </>
   );
 }

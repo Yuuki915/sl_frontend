@@ -79,7 +79,7 @@
   cursor: pointer;
 }
 .blog-wrapper {
-  padding: 1.5rem 0 5rem;
+  padding: 2rem 0 5rem;
 }
 .show-img {
   margin: 2rem 0;
@@ -137,8 +137,10 @@
     display: none;
   }
   .bb-posi {
-    width: 60%;
+    width: 100%;
     left: 0rem;
+    top: 5rem;
+    justify-content: center;
   }
   .blog-detail {
     width: 100%;

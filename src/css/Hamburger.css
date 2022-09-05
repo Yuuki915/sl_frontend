@@ -23,7 +23,7 @@
   height: 100vh;
   background-color: lightslategray;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: column;
   transition: 0.5s ease-in-out;
   z-index: 100;
@@ -35,6 +35,9 @@
 .icon {
   margin: 1rem;
   cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
 .close-icon {
   color: #fff;
@@ -45,7 +48,7 @@
 .user-lines {
   position: fixed;
   top: 2rem;
-  right: 1.5rem;
+  right: 2rem;
   display: flex;
   align-items: center;
   z-index: 99;
@@ -132,6 +135,7 @@
 
 .ham-username {
   color: #fff;
+  margin: 3rem 0;
 }
 .hamburger .cats {
   color: #fff;

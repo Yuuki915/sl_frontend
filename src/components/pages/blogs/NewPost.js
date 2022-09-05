@@ -76,26 +76,27 @@ export default function NewPost() {
       });
   };
   return (
-    <div className="new">
-      <Header />
-      <h1 className="page-h1">Write Your Blog</h1>
+    <>
+      <div className="new">
+        <Header />
+        <h1 className="page-h1">Write Your Blog</h1>
 
-      <Form
-        submitHandler={submitHandler}
-        title={title}
-        author={user && user.username}
-        favorite={favorite}
-        body={body}
-        category={category}
-        titleChangeHandler={(e) => setTitle(e.target.value)}
-        // authorChangeHandler={(e) => setAuthor(user && user.username)}
-        favoriteChangeHandler={(e) => setfavorite(e.target.value)}
-        bodyChangeHandler={(e) => setBody(e.target.value)}
-        categoryChangeHandler={(e) => setCategory(e.target.value)}
-        handleAddImg={handleAddImg}
-      />
-
+        <Form
+          submitHandler={submitHandler}
+          title={title}
+          author={user && user.username}
+          favorite={favorite}
+          body={body}
+          category={category}
+          titleChangeHandler={(e) => setTitle(e.target.value)}
+          // authorChangeHandler={(e) => setAuthor(user && user.username)}
+          favoriteChangeHandler={(e) => setfavorite(e.target.value)}
+          bodyChangeHandler={(e) => setBody(e.target.value)}
+          categoryChangeHandler={(e) => setCategory(e.target.value)}
+          handleAddImg={handleAddImg}
+        />
+      </div>
       <Footer />
-    </div>
+    </>
   );
 }
