@@ -41,15 +41,17 @@
 .footer p {
   padding: 1rem 0;
   width: 100vw;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 .home .footer {
   position: fixed;
   bottom: 0;
 }
 .login .footer p,
-.register .footer p {
+.register .footer p,
+.show .footer,
+.cat-page-wrapper .footer {
   position: fixed;
   bottom: 0;
-  left: 0ch;
+  left: 0;
 }

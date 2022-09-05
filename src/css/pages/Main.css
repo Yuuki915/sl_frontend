@@ -228,3 +228,9 @@
   margin: 1rem;
   position: relative;
 }
+
+@media (max-width: 450px) {
+  .site-title {
+    width: 100%;
+  }
+}

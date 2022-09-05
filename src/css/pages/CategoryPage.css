@@ -1,9 +1,11 @@
+.cat-page-wrapper {
+  height: 100vh;
+}
 .category-page {
   display: grid;
   grid-template-columns: 200px auto;
   grid-template-rows: 100%;
 }
-
 .to-top-link {
   position: absolute;
   top: 1.5rem;
