@@ -65,6 +65,24 @@ body {
   display: block;
   margin: 1rem 0;
 }
+.welcome {
+  font-size: 2rem;
+}
+.to {
+  font-size: 1.3rem;
+  padding-top: 1rem;
+}
+.goToSharelog {
+  display: block;
+  font-size: 4.5rem;
+  transition: 0.3s;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgb(182, 182, 182);
+}
+.goToSharelog:hover {
+  text-shadow: 2px 2px 5px rgb(231, 196, 193);
+ 
+}
 
 /* 
     general 
