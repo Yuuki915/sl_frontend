@@ -90,7 +90,7 @@ export default function Hamburger() {
           {user && (
             <div className="ham-user">
               <Link
-                to="/blogs"
+                to="/"
                 className="ham-auth-link ham-logout-btn"
                 onClick={handleLogout}
               >

@@ -19,7 +19,7 @@ export default function Main() {
 
   useEffect(() => {
     const getBlogs = async () => {
-      await axios.get(`${BACKEND_URL}/blogs`).then((res) => {
+      await axios.get(`${BACKEND_URL}`).then((res) => {
         // console.log(res.data);
         dispatch({ type: "SET_BLOGS", payload: res.data });
       });
@@ -39,7 +39,7 @@ export default function Main() {
       {user && user ? (
         <div className="btn-container">
           <button className="add-btn">
-            <Link to="/blogs/new">Post a Blog</Link>
+            <Link to="/new">Post a Blog</Link>
           </button>
         </div>
       ) : (

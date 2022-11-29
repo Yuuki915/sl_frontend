@@ -18,15 +18,15 @@ function App() {
       <Router>
         <ScrollTop />
         <Routes>
-          <Route path="/" element={<Home />} />
+          {/* <Route path="/" element={<Home />} /> */}
           <Route path="/user/login" element={<Login />} />
           <Route path="/user/register" element={<Register />} />
 
-          <Route path="/blogs" element={<Main />} />
-          <Route path="/blogs/category/:category" element={<CategoryPage />} />
-          <Route path="/blogs/new" element={<NewPost />} />
-          <Route path="/blogs/:slug" element={<Show />} />
-          <Route path="/blogs/edit/:id" element={<Edit />} />
+          <Route path="/" element={<Main />} />
+          <Route path="/category/:category" element={<CategoryPage />} />
+          <Route path="/new" element={<NewPost />} />
+          <Route path="/:slug" element={<Show />} />
+          <Route path="/edit/:id" element={<Edit />} />
         </Routes>
       </Router>
     </div>

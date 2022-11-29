@@ -94,7 +94,7 @@ export default function Form(props) {
       </div>
 
       <div className="input-container input-container-btns">
-        <Link to="/blogs" className="btn can-btn">
+        <Link to="/" className="btn can-btn">
           Cancel
         </Link>
         <button type="submit" className="btn save-btn">

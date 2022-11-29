@@ -32,7 +32,7 @@ export default function CategoryPage() {
       <div className="category-page">
         <div className="sidebar-container">
           <div className="sidebar">
-            <Link to="/blogs" className="to-top">
+            <Link to="/" className="to-top">
               Sharelog
             </Link>
             <div className="categories-wrapper">
@@ -48,14 +48,14 @@ export default function CategoryPage() {
         <div className="blog-wrapper">
           <div className="bb-posi">
             <button className="back-btn">
-              <Link to="/blogs" className="back-link">
+              <Link to="/" className="back-link">
                 <FiArrowLeftCircle />
                 <span>Top page</span>
               </Link>
             </button>
             {user && user ? (
               <button className="addmore-btn">
-                <Link to="/blogs/new" className="addmore-link">
+                <Link to="/new" className="addmore-link">
                   <span>Add Blog</span>
                 </Link>
               </button>
