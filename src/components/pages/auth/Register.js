@@ -25,7 +25,7 @@ export default function Register() {
 
   useEffect(() => {
     if (user) {
-      navigate("/blogs");
+      navigate("/");
     }
   }, [navigate, user]);
 
@@ -76,9 +76,9 @@ export default function Register() {
           </div>
 
           <div className="input-container">
-            <a href="/blogs" className="btn can-btn">
+            <Link href="/" className="btn can-btn">
               Cancel
-            </a>
+            </Link>
             <button type="submit" className="btn save-btn" disabled={isLoading}>
               Submit
             </button>

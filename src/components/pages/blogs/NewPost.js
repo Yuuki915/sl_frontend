@@ -64,11 +64,11 @@ export default function NewPost() {
     };
 
     await axios
-      .post(`${BACKEND_URL}/blogs/new`, data)
+      .post(`${BACKEND_URL}/new`, data)
       .then((res) => {
         // console.log(res.data);
         dispatch({ type: "CREATE_BLOG", payload: res.data });
-        navigate(`/blogs/${res.data.slug}`);
+        navigate(`/${res.data.slug}`);
       })
       .catch((err) => {
         setError(err);

@@ -26,7 +26,7 @@ export default function Login() {
 
   useEffect(() => {
     if (user) {
-      navigate("/blogs");
+      navigate("/");
     }
   }, [navigate, user]);
 
@@ -78,9 +78,9 @@ export default function Login() {
           </div>
 
           <div className="input-container">
-            <a href="/blogs" className="btn can-btn">
+            <Link to="/" className="btn can-btn">
               Cancel
-            </a>
+            </Link>
             <button type="submit" className="btn save-btn" disabled={isLoading}>
               Login
             </button>
@@ -95,9 +95,8 @@ export default function Login() {
 
           {error && <div className="error">{error}</div>}
         </form>
-
       </div>
-      
+
       <Footer />
     </div>
   );

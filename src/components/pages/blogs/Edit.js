@@ -69,11 +69,11 @@ export default function Edit() {
     };
 
     await axios
-      .put(`${BACKEND_URL}/blogs/edit/${blog && blog._id}`, data)
+      .put(`${BACKEND_URL}/edit/${blog && blog._id}`, data)
       .then(async (res) => {
         // console.log("update return: ", res.data);
         await dispatch({ type: "UPDATE_BLOG", payload: res.data });
-        navigate(`/blogs/${res.data.slug}`);
+        navigate(`/${res.data.slug}`);
         return res;
       })
       .catch((err) => {

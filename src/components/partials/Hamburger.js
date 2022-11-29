@@ -52,7 +52,7 @@ export default function Hamburger() {
 
             <div className={`${logoutClass ? "" : "logput-btn-none"}`}>
               <div className="logout-btn-arrow"></div>
-              <Link to="/blogs" className="logout-btn" onClick={handleLogout}>
+              <Link to="/" className="logout-btn" onClick={handleLogout}>
                 <p className="logout-text">Logout</p>
               </Link>
               <p
