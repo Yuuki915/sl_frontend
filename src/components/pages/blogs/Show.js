@@ -30,11 +30,11 @@ export default function Show() {
     }
 
     await axios
-      .delete(`${BACKEND_URL}/blogs/${blog && blog._id}`)
+      .delete(`${BACKEND_URL}/${blog && blog._id}`)
       .then((res) => {
         // console.log(res.data);
         dispatch({ type: "DELETE_BLOG", payload: res.data });
-        navigate(`/blogs`);
+        navigate(`/`);
       })
       .catch((err) => {
         setError(err);
@@ -114,10 +114,7 @@ export default function Show() {
               <Link to="/" className="btn del-btn" onClick={handleDelete}>
                 Delete
               </Link>
-              <Link
-                to={`/edit/${blog && blog._id}`}
-                className="btn edit-btn"
-              >
+              <Link to={`/edit/${blog && blog._id}`} className="btn edit-btn">
                 Edit
               </Link>
             </div>
