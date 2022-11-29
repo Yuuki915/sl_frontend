@@ -23,10 +23,10 @@ function App() {
           <Route path="/user/register" element={<Register />} />
 
           <Route path="/" element={<Main />} />
-          <Route path="/blogs/category/:category" element={<CategoryPage />} />
-          <Route path="/blogs/new" element={<NewPost />} />
-          <Route path="/blogs/:slug" element={<Show />} />
-          <Route path="/blogs/edit/:id" element={<Edit />} />
+          <Route path="/category/:category" element={<CategoryPage />} />
+          <Route path="/new" element={<NewPost />} />
+          <Route path="/:slug" element={<Show />} />
+          <Route path="/edit/:id" element={<Edit />} />
         </Routes>
       </Router>
     </div>

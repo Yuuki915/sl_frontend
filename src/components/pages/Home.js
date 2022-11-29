@@ -11,9 +11,11 @@ export default function Home() {
 
       <div className="topage">
         <div>
-          <p>Welcome</p>
-          <p>to</p>
-          <Link to="/blogs">Sharelog</Link>
+          <p className="welcome">Welcome</p>
+          <p className="to">to</p>
+          <Link to="/blogs" className="goToSharelog">
+            Sharelog
+          </Link>
         </div>
       </div>
 
