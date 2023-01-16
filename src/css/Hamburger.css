@@ -173,7 +173,7 @@
   background-color: rgba(233, 150, 122, 0.6);
 }
 
-@media (max-width: 890px) {
+/* @media (max-width: 890px) { */
   .lines {
     display: block;
     cursor: pointer;
@@ -186,4 +186,4 @@
     border-radius: 5px;
     background-color: #555;
   }
-}
+/* } */
