@@ -76,7 +76,7 @@ export default function Register() {
           </div>
 
           <div className="input-container">
-            <Link href="/" className="btn can-btn">
+            <Link to="/" className="btn can-btn">
               Cancel
             </Link>
             <button type="submit" className="btn save-btn" disabled={isLoading}>
