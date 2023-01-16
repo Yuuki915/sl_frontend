@@ -5,7 +5,7 @@
        email: yuyu@mail.com
        password: @Yuyu123
 
-![sharelog](https://user-images.githubusercontent.com/88405082/212751827-02b5b3bb-b265-4321-bdc8-b502e48f777e.GIF)
+<img src="[https://user-images.githubusercontent.com/16319829/81180309-2b51f000-8fee-11ea-8a78-ddfe8c3412a7.png](https://user-images.githubusercontent.com/88405082/212751827-02b5b3bb-b265-4321-bdc8-b502e48f777e.GIF)" width="500" height="250">
 
 ### @ Site discription
 
@@ -18,3 +18,4 @@ After register or login, you can share your favorite places or shops and see oth
 ### @ Source Code: Backend
 
 => https://github.com/Yuuki915/sl_backend
+
